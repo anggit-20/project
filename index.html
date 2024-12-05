@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    * { 
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+    }
+    body {
+        background-color: #f0e8e8;
+        margin: -10px;
+    }
+    .atas {
+        background-image: linear-gradient(#106EBE, #0FFCBE);
+        height: 200px;
+        width: 100%;
+    }
+    .depan {
+        background-color: #dcece9;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+        height: 200px;
+        
+    }
+    .rekap {
+        margin: 50px;
+        background-color: white;
+        margin-top: -10px;
+        height: 50px;
+        width: 1500;
+        border-radius: 5px;
+    }
+
+    .atas img {
+        height: 50px;
+        width: 50px;
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+
+    .atas span {
+        display: flex;
+        justify-content: center;
+        margin-top: -30px;
+        color: white;
+    }
+
+    .depan span {
+        margin-left: 30px;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        color: black;
+    }
+    .depan button {
+        background-color: #106EBE;
+        color: white;
+        border-radius: 5px;
+        margin-left: 30px;
+        width: 215px;
+        text-decoration: none;
+    }
+    .btn-menu {
+        justify-content: center;
+    }
+
+    .depan h1 { 
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+    .container {
+        margin-top: 20px;
+    }
+    .card-header {
+        background-color: #59b39b;
+        display: flex;
+        justify-content: center;
+    }
+    .menus {
+        display: flex;
+        justify-content: center;
+
+    }
+    .btn-group {
+        width: 500px;
+        justify-content: center;
+    }
+    
+</style>
+<body>
+
+        <div class="atas">
+            <img src="logo_smk.png" alt="logo-smk">
+            
+            <span>ABSENSI</span>
+            <div class="depan">
+                <span>Selamat Datang Kembali!</span>
+                
+                <div class="menus">
+                    <button type="submit"  class="btn btn-primary" id="btnSimpan"><a href="login.html" style="text-decoration: none; color: white; width: 500px;">Login Siswa</a></button>
+
+                  <div class="btn-group">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                      Menu Admin
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="admin.html">Buat Password Admin</a></li>
+                      <li><a class="dropdown-item" href="login-admin.html">Login Admin</a></li>
+                      <li><a class="dropdown-item" href="siswa.html">Tambah Data Siswa</a></li>
+                      <li><a class="dropdown-item" href="kelas.html">Kelas</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- form absen -->
+            <div class="container">
+            <!--content-->
+            <div class="mb-3">
+      
+              <div class="card mt-3" style="box-shadow: 2px 2px 2px rgb(227, 231, 233);">
+                  <div class="card-header">
+                  <span style="color: white;">Absensi Siswa</span>
+                  </div>
+                  <form id="absensi-siswa">
+  
+                  <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kelas</label>
+                        <input type="text" class="form-control" id="kelas">
+                    </div>
+                      <div class="mb-3">
+                          <label class="form-label">Tanggal Absen</label>
+                          <input type="date" class="form-control" id="tanggal">
+                      </div>
+                      <div class="mb-3">
+                              <label for="status">Status Kehadiran:</label>
+                              <select class="form-select" id="keterangan" required>
+                                <option value="" disabled selected>Pilih Kehadiran</option>
+                                <option value="Hadir">Hadir</option>
+                                <option value="Sakit">Sakit</option>
+                                <option value="Izin">Izin</option>
+                              </select>
+                      </div>
+                      <div class="mb-3 mt-3">
+                          <label for="exampleFormControlInput1" class="form-label">Bukti Surat Sakit/Izin</label>
+                          <input type="file" class="form-control" id="bukti">
+                      </div>
+      
+                      
+                  </div>
+                  
+                  <div class="card-footer">
+                      <button type="button" id="btnSimpan" class="btn btn-primary" style="text-decoration: none; color: white;" onclick="TambahData()">Kirim</button>
+                  </div>
+  
+                  </form>
+                  </div>
+  
+            </div>
+        </div>
+      
+            <!-- tabel absen -->
+            <div class="container">
+                <div class="content mt-5">
+                    <div class="card">
+                        <div class="card-header" style="color : white">
+                           Tabel Kehadiran
+                        </div>
+                        <div class="card-body">
+                    <table class="table" id="tblAbsen">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Kelas</th>
+                            <th scope="col">Keterangan</th>
+                            <th scope="col">Opsi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <!-- data diisi pada javascript -->
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-header" style="color: white;">
+                        Jumlah Keterangan Absensi
+                    </div>
+                    <div class="card-body">
+                        <table class="table" id="tblJumlah">
+                            <thead>
+                              <tr>
+                                <th scope="row">Hadir</th>
+                                <th scope="row">Sakit</th>
+                                <th scope="row">Izin</th>
+                                <th scope="row">Keseluruhan</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="jumlahHadir">0</td>
+                                    <td id="jumlahSakit">0</td>
+                                    <td id="jumlahIzin">0</td>
+                                    <td id="jumlahKeseluruhan">0</td>
+                                </tr>
+                            </tbody>
+                    </div>
+                </div>
+            </div>
+            
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
