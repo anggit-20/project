@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (){
     tanggalInput.value = getTanggalHariIni();
     
     // menampilkan data pada tabel absen
-    const absenData = JSON.parse(localStorage.getItem('absenData')) || [];
+    
     const LihatData = () => {
         
         const tblAbsen = document.getElementById('tblAbsen');
@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function (){
         <th>Opsi</th>
     </tr>`
 
+        const absenData = JSON.parse(localStorage.getItem('absenData')) || [];
         absenData.forEach((data, index) => {
             const buktiLink = data.bukti
             ? `<a href="#">${data.bukti}</a>`
@@ -123,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function (){
                 bukti: file? file.name : ''
             }
         
-            // const absenData = JSON.parse(localStorage.getItem('absenData')) || [];
+            const absenData = JSON.parse(localStorage.getItem('absenData')) || [];
             
             absenData.push(dataAbsenBaru);
       

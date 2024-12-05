@@ -28,32 +28,33 @@ const tampilkanKelas = () => {
     {
         tblKelas.innerHTML += `<tr>
         <td><option value="${key.id}">${key.nama}</option></td>
-        <td><button type="button" class="btn btn-danger" onclick="hapusKelas('${key.nama}">Hapus</button></td>
+        <td><button type="button" class="btn btn-danger" onclick="hapusKelas('${key.nama}')">Hapus</button></td>
         </tr>`
         
     }
 }
-tampilkanKelas();
 // selesai
 
 
 // fungsi mencari index siswa
-const cariIndex = (nama) => {
-    // tampilkan index jika nama siswa === nama
-    for(let i = 0; i < listKelas.length; i++) {
-        if(listKelas[i].nama == nama){
-            return i
-        }
-    }
-}
+// const cariIndex = (nama) => {
+//     // tampilkan index jika nama siswa === nama
+//     for(let i = 0; i < listKelas.length; i++) {
+//         if(listKelas[i].nama == nama){
+//             return i
+//         }
+//     }
+// }
 // selesai
 
 // fungsi menghapus kelas pada tabel
-const hapusKelas = (target) => {
+const hapusKelas = (index) => {
     const listKelas = JSON.parse(localStorage.getItem('kelas')) || []
-    const hapusIndex = cariIndex(target)
-    listKelas.splice(hapusIndex, 1)
+    // const hapusIndex = cariIndex(target)
+    listKelas.splice(index, 1)
     localStorage.setItem('kelas', JSON.stringify(listKelas))
-    window.location.reload();
+
+    tampilkanKelas();
+    
 }
 tampilkanKelas();
